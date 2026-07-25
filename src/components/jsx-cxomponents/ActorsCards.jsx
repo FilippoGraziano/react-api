@@ -6,7 +6,7 @@ const ActorsCards = props => (
 
         <h2>Actors</h2>
 
-        <div className="grid-container">
+        <div className="flex-container">
 
             {props.actorsList.map(el =>
 

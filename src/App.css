@@ -12,6 +12,9 @@
 
     .card {
 
+        flex-basis: calc(100% / 3 - 20px);
+        flex-grow: 1;
+
         display: flex;
         gap: 15px;
         background-color: #900C3F;
@@ -24,6 +27,11 @@
             object-fit: cover;
         }
 
+    }
+
+    .card:last-child {
+        flex-basis: 50%;
+        flex-grow: 0;
     }
 
     .act-description {
