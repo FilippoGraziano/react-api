@@ -26,11 +26,11 @@ const ActressesCards = props => (
 
                         </address>
 
-                        <h4>Biography</h4>
+                        <h4>Biography:</h4>
                         <p>{el.biography}</p>
 
-                        <h4>Awards</h4>
-                        <p>{el.awards}</p>
+                        <h4>Awards:</h4>
+                        <p>{el.awards.join(`, `)}</p>
 
                     </div>
 
