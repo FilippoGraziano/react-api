@@ -26,6 +26,9 @@ const ActorsCards = props => (
 
                         </address>
 
+                        <h4>Know for:</h4>
+                        <p>{el.known_for.join(`, `)}</p>
+
                         <h4>Biography:</h4>
                         <p>{el.biography}</p>
 
