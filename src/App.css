@@ -5,11 +5,6 @@
     padding-bottom: 30px;
 
     #actresses-cards {
-
-        .grid-container{
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
         
         h2 {
             padding: 20px 0;
@@ -34,7 +29,7 @@
 
     }
 
-    .actress-description {
+    .act-description {
         
         padding: 10px 10px 10px 0;
 

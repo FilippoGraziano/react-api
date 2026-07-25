@@ -1,6 +1,7 @@
 import './App.css'
-import axios from "axios"
 import { useEffect, useState } from 'react'
+import axios from "axios"
+import ActressesCards from './components/jsx-cxomponents/ActressesCards'
 
 const App = () => {
 
@@ -19,49 +20,11 @@ const App = () => {
 
   return (
 
-    <>
+    <main className='container'>
 
-      <section className='container' id="actresses-cards">
+      <ActressesCards actressesList={actressesList} />
 
-        <h2>Actresses</h2>
-
-        <div className="grid-container">
-
-          {actressesList.map(el =>
-
-            <div key={el.id} className='card'>
-
-              <img src={el.image} alt={el.name} />
-
-              <div className="actress-description">
-
-                <h3>{el.name}</h3>
-                
-                <address>
-
-                  Born on: {el.birth_year}  
-                  <br /> 
-                  Nationality: {el.nationality}
-
-                </address>
-
-                <h4>Biography</h4>
-                <p>{el.biography}</p>
-
-                <h4>Awards</h4>
-                <p>{el.awards}</p>
-
-              </div>
-
-            </div>
-
-          )}
-
-        </div>
-
-      </section>
-
-    </>
+    </main>
 
   )
 }
