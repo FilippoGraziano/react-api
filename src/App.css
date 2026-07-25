@@ -1,0 +1,51 @@
+#root {
+
+    background-color: #121212;
+    color: white;
+    padding-bottom: 30px;
+
+    #actresses-cards {
+
+        .grid-container{
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        h2 {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+    }
+
+    .card {
+
+        display: flex;
+        gap: 15px;
+        background-color: #900C3F;
+        border: 2px solid white;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            width: 150px;
+            object-fit: cover;
+        }
+
+    }
+
+    .actress-description {
+        
+        padding: 10px 10px 10px 0;
+
+        h3 {
+            margin: 5px 0;
+        }
+
+        h4 {
+            margin: 8px 0 2px 0;
+        }
+
+    }
+
+}

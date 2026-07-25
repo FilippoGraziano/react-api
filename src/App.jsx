@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react'
 
 const App = () => {
 
-  const [actressList, setActressList] = useState([])
+  const [actressesList, setActressesList] = useState([])
 
   const fetchActress = () => {
 
     axios.get(`https://lanciweb.github.io/demo/api/actresses/`)
-      .then(res => setActressList(res.data))
+      .then(res => setActressesList(res.data))
       
   }
 
@@ -18,21 +18,51 @@ const App = () => {
 
 
   return (
+
     <>
-      <ul id="actress-list">
 
-        <li>
-          <h2>Actress</h2>
-        </li>
+      <section className='container' id="actresses-cards">
 
-        {actressList.map(el =>
+        <h2>Actresses</h2>
 
-          <li key={el.id}>{el.name}</li>
+        <div className="grid-container">
 
-        )}
+          {actressesList.map(el =>
 
-      </ul>
+            <div key={el.id} className='card'>
+
+              <img src={el.image} alt={el.name} />
+
+              <div className="actress-description">
+
+                <h3>{el.name}</h3>
+                
+                <address>
+
+                  Born on: {el.birth_year}  
+                  <br /> 
+                  Nationality: {el.nationality}
+
+                </address>
+
+                <h4>Biography</h4>
+                <p>{el.biography}</p>
+
+                <h4>Awards</h4>
+                <p>{el.awards}</p>
+
+              </div>
+
+            </div>
+
+          )}
+
+        </div>
+
+      </section>
+
     </>
+
   )
 }
 
