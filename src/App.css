@@ -4,13 +4,10 @@
     color: white;
     padding-bottom: 30px;
 
-    #actresses-cards {
-        
-        h2 {
-            padding: 20px 0;
-            text-align: center;
-        }
 
+    h2 {
+        padding: 20px 0;
+        text-align: center;
     }
 
     .card {
@@ -30,7 +27,7 @@
     }
 
     .act-description {
-        
+
         padding: 10px 10px 10px 0;
 
         h3 {

@@ -7,12 +7,13 @@
 }
 
 .container {
-    max-width: 980px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
     gap: 20px;
 }
