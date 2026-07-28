@@ -1,4 +1,5 @@
 import './App.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import { use, useEffect, useState } from 'react'
 import axios from "axios"
 import ActressesCards from './components/jsx-cxomponents/ActressesCards'

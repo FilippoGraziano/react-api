@@ -1,22 +1,35 @@
+import { useEffect, useState } from "react";
 import "../css-components/ActressesCards.css"
 
-const ActressesCards = props => (
+const ActressesCards = props => {
 
-    <section id="actresses-cards">
+    const [filter, setFilter] = useState(``);
+    const [filteredActresses, setFilteredActresses] = useState([]);
 
-        <h2>Actresses</h2>
+    useEffect(() => setFilteredActresses(
+        props.actressesList.filter(el => el.name.toLowerCase().includes(filter.toLowerCase()))
+    ), [filter])
 
-        <div className="flex-container">
+    return (
 
-            {props.actressesList.map(el =>
+        <section id="actresses-cards">
 
-                <div key={el.id} className='card'>
+            <h2>Actresses</h2>
+
+            <label>
+                <span>Search a Name</span>
+                <input type="text" name="actresses-name" value={filter} onChange={e => (setFilter(e.target.value))}/>
+            </label>
+
+            <div className="flex-container">
+
+                {filteredActresses.map(el => <div key={el.id} className='card'>
 
                     <img src={el.image} alt={el.name} />
 
-                    <div className="act-description" hidden={props.open.actresses !== el.id}>
+                    <h3>{el.name}</h3>
 
-                        <h3>{el.name}</h3>
+                    <div className="act-description" hidden={props.open.actresses !== el.id}>
 
                         <address>
 
@@ -37,28 +50,29 @@ const ActressesCards = props => (
 
                     </div>
 
-                    <button hidden={props.open.actresses === el.id} onClick={() => props.setOpen({...props.open, actresses: el.id})} >
+                    <button hidden={props.open.actresses === el.id} onClick={() => props.setOpen({ ...props.open, actresses: el.id })}>
 
-                        <i class="bi bi-chevron-down"></i>
+                        <i className="bi bi-chevron-down"></i>
                         More info
-                    
+
                     </button>
 
-                    <button hidden={props.open.actresses !== el.id} onClick={() => props.setOpen({...props.open, actresses: undefined})} >
+                    <button hidden={props.open.actresses !== el.id} onClick={() => props.setOpen({ ...props.open, actresses: undefined })}>
 
-                        <i class="bi bi-chevron-up"></i>
+                        <i className="bi bi-chevron-up"></i>
                         Close info
 
                     </button>
 
                 </div>
 
-            )}
+                )}
 
-        </div>
+            </div>
 
-    </section>
+        </section>
 
-);
+    );
+};
 
 export default ActressesCards
