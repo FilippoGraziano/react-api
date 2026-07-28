@@ -1,4 +1,5 @@
 import "../css-components/ActorsCards.css"
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const ActorsCards = props => (
 
@@ -14,7 +15,7 @@ const ActorsCards = props => (
 
                     <img src={el.image} alt={el.name} />
 
-                    <div className="act-description">
+                    <div className="act-description" hidden={props.open.actor !== el.id}>
 
                         <h3>{el.name}</h3>
 
@@ -36,6 +37,20 @@ const ActorsCards = props => (
                         <p>{el.awards.join(`, `)}</p>
 
                     </div>
+
+                    <button hidden={props.open.actor === el.id} onClick={() => props.setOpen({...props.open, actor: el.id})} >
+
+                        <i class="bi bi-chevron-down"></i>
+                        More info
+
+                    </button>
+
+                    <button hidden={props.open.actor !== el.id} onClick={() => props.setOpen({...props.open, actor: undefined})} >
+
+                        <i class="bi bi-chevron-up"></i>
+                        Close info
+
+                    </button>
 
                 </div>
 

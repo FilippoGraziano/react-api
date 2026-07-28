@@ -14,7 +14,7 @@ const ActressesCards = props => (
 
                     <img src={el.image} alt={el.name} />
 
-                    <div className="act-description">
+                    <div className="act-description" hidden={props.open.actresses !== el.id}>
 
                         <h3>{el.name}</h3>
 
@@ -36,6 +36,20 @@ const ActressesCards = props => (
                         <p>{el.awards.join(`, `)}</p>
 
                     </div>
+
+                    <button hidden={props.open.actresses === el.id} onClick={() => props.setOpen({...props.open, actresses: el.id})} >
+
+                        <i class="bi bi-chevron-down"></i>
+                        More info
+                    
+                    </button>
+
+                    <button hidden={props.open.actresses !== el.id} onClick={() => props.setOpen({...props.open, actresses: undefined})} >
+
+                        <i class="bi bi-chevron-up"></i>
+                        Close info
+
+                    </button>
 
                 </div>
 

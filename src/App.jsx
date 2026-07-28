@@ -7,8 +7,9 @@ import ActorsCards from './components/jsx-cxomponents/ActorsCards'
 const App = () => {
 
   const [actressesList, setActressesList] = useState([])
-
   const [actorsList, setActorsList] = useState([])
+
+  const [open, setOpen] = useState({actresses: undefined, actor: undefined})
   
   const fetchAct = () => {
 
@@ -29,9 +30,9 @@ const App = () => {
 
     <main className='container'>
 
-      <ActressesCards actressesList={actressesList} />
+      <ActressesCards actressesList={actressesList} open={open} setOpen={setOpen} />
 
-      <ActorsCards actorsList={actorsList} />
+      <ActorsCards actorsList={actorsList} open={open} setOpen={setOpen} />
 
     </main>
 
