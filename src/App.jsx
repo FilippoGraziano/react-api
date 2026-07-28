@@ -38,11 +38,9 @@ const App = () => {
         <option value="actor">Actor</option>
       </select>
 
-      
+      {filter === `actresses` && <ActressesCards actressesList={actressesList} open={open} setOpen={setOpen} />}
 
-      {filter === `actresses` && <ActressesCards actressesList={actressesList} open={open} />}
-
-      {filter === `actor` && <ActorsCards actorsList={actorsList} open={open} />}
+      {filter === `actor` && <ActorsCards actorsList={actorsList} open={open} setOpen={setOpen} />}
 
     </main>
 
