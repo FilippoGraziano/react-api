@@ -17,7 +17,7 @@ const ActressesCards = props => {
             <h2>Actresses</h2>
 
             <label>
-                <span>Search a Name</span>
+                <span>Search by Name</span>
                 <input type="text" name="actresses-name" value={filter} onChange={e => (setFilter(e.target.value))}/>
             </label>
 
